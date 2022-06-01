@@ -1,0 +1,21 @@
+{
+  "name": "gutenberg-examples",
+  "version": "1.0.0",
+  "source": [
+    "src/index.jsx",
+    "src/index.scss"
+  ],
+  "scripts": {
+    "build": "parcel build --dist-dir build && node build.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "parcel": "^2.6.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0"
+  }
+}

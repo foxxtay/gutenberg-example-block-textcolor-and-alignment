@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "gutenberg-parcel-example/gutenpride",
+	"version": "0.1.0",
+	"title": "Gutenpride Parcel",
+	"category": "text",
+	"icon": "flag",
+	"description": "A Gutenberg block to show your pride! This block enables you to type text and style it with the color font Gilbert from Type with Pride.",
+	"attributes": {
+		"content": {
+			"type": "array",
+			"source": "children",
+			"selector": "p",
+			"default": "Text..."
+		},
+		"alignment": {
+			"type": "string",
+			"default": "none"
+		},
+		"text_color": {
+			"type": "string",
+			"default": "#000000"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "gutenberg-parcel-example",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./index.css"
+}

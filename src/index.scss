@@ -5,29 +5,24 @@
  * Replace them with your own styles or remove the file completely.
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
- .wp-block-gutenberg-parcel-example-gutenpride {
-   font-family: 'Bebas Neue', sans-serif;
-   font-size: 64px;
- }
- 
- .wp-block-gutenberg-parcel-example-gutenpride input[type="text"] {
-	color: inherit;
-	background: inherit;
-	border: 0;
-	font-family: 'Bebas Neue', sans-serif;
-	font-size: 64px;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.wp-block-gutenberg-parcel-example-gutenpride {
+	font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.gutenberg-examples-align-left {
-	text-align: left;
+.wp-block-gutenberg-parcel-example-gutenpride h2, .wp-block-gutenberg-parcel-example-gutenpride p {
+	font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.gutenberg-examples-align-center {
-	text-align: center;
-}
-
-.gutenberg-examples-align-right {
-	text-align: right;
+.editor-styles-wrapper {
+	.wp-block-gutenberg-parcel-example-gutenpride {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+	}
+	
+	.wp-block-gutenberg-parcel-example-gutenpride h2, .wp-block-gutenberg-parcel-example-gutenpride p {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+	}
 }

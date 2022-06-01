@@ -6,6 +6,7 @@
  */
  const useBlockProps = window.wp.blockEditor.useBlockProps
  const RichText = window.wp.blockEditor.RichText
+ const InnerBlocks = window.wp.blockEditor.InnerBlocks
 
 /**
  * The save function defines the way in which the different attributes should
@@ -23,11 +24,14 @@ export default function save({ attributes }) {
 	return (
 		<div {...blockProps}>
 			<RichText.Content
-				className={ `gutenberg-examples-align-${ attributes.alignment }` }
-				style={ { color: attributes.text_color } }
+				tagName="h2"
+				value={ attributes.title }
+			/>
+			<RichText.Content
 				tagName="p"
 				value={ attributes.content }
 			/>
+			<InnerBlocks.Content />
 		</div>
 	);
 }

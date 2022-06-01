@@ -19,8 +19,8 @@
  * @see https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/block-controls-toolbar-and-sidebar/#settings-sidebar
  */
   const __ = window.wp.i18n.__
-  const ColorPalette = window.wp.blockEditor.ColorPalette
-  const InspectorControls = window.wp.blockEditor.InspectorControls
+  // const ColorPalette = window.wp.blockEditor.ColorPalette
+  // const InspectorControls = window.wp.blockEditor.InspectorControls
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -29,6 +29,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 const useBlockProps = window.wp.blockEditor.useBlockProps
+const InnerBlocks = window.wp.blockEditor.InnerBlocks
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -46,48 +47,35 @@ export default function Edit({ attributes, setAttributes }) {
 	const blockProps = useBlockProps();
 
 	// constants for settingAttributes
-	const onChangeTextColor = ( hexColor ) => {
-		setAttributes( {text_color: hexColor} );
+
+	const onChangeTitle = ( newTitle ) => {
+		setAttributes( {title: newTitle} );
 	};
 
 	const onChangeContent = ( newContent ) => {
 		setAttributes( {content: newContent} );
 	};
 
-	const onChangeAlignment = ( newAlignment ) => {
-		setAttributes( {
-			alignment: newAlignment === undefined ? 'none' : newAlignment,
-		} );
-	};
-
 	return (
 		<div {...blockProps}>
 			{
 				<BlockControls>
-					<AlignmentToolbar
-						value={ attributes.alignment }
-						onChange={ onChangeAlignment }
-					/>
 				</BlockControls>
 			}
-			<InspectorControls key="setting">
-				<div id="gutenpride-controls">
-					<fieldset>
-						<legend className="blocks-base-control__label">
-							{ __( 'Text color', 'gutenpride' ) }
-						</legend>
-						<ColorPalette
-							onChange={ onChangeTextColor }
-						/>
-					</fieldset>
-				</div>
-			</InspectorControls>
+			<RichText
+				tagName="h2"
+				placeholder="Title"
+				value={ attributes.title }
+				onChange={ onChangeTitle }
+				allowedFormats={ [] }
+			/>
 			<RichText
 				tagName="p"
-				style={ { textAlign: attributes.alignment, color: attributes.text_color } }
+				placeholder="Content"
 				value={ attributes.content }
 				onChange={ onChangeContent }
 			/>
+			<InnerBlocks />
 		</div>
 	);
 }

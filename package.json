@@ -6,6 +6,7 @@
     "src/index.scss"
   ],
   "scripts": {
+    "watch": "node build.mjs && parcel --dist-dir build",
     "build": "parcel build --dist-dir build && node build.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

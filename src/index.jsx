@@ -16,10 +16,6 @@ registerBlockType('gutenberg-parcel-example/gutenpride', {
      * Used to construct a preview for the block to be shown in the block inserter.
      */
     example: {
-        attributes: {
-            content: 'Parcel',
-            alignment: 'left',
-        },
     },
     /**
      * @see ./edit.js
